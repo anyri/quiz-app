@@ -1,11 +1,10 @@
 export class Quiz {
-    question: string;
-    options: string [];
-    answer: string;   
-    // selected?: string;
-    selected: string;
+    question?: string = '';
+    options?: string [] = [];
+    answer?: number = null; 
+    selected?: number = null; 
 
-     constructor(qSource: Quiz) {
-        Object.assign(this, qSource);
+     constructor() {
+        
     }; 
 }

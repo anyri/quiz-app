@@ -1,7 +1,7 @@
 <div *ngIf="!user.done">
   <h5><strong>{{user.count + 1}}</strong> {{currentQuiz.question}}</h5>
   <ul>
-    <li *ngFor="let item of currentQuiz.options" class="radio"><label><input type="radio" name="answer" [value]="item" (click)="currentQuiz.selected = item" [checked]="currentQuiz.selected == item">{{item}}</label></li>
+    <li *ngFor="let item of currentQuiz.options; let ind = index" class="radio"><label><input type="radio" name="answer" [value]="ind" (click)="currentQuiz.selected = ind" [checked]="currentQuiz.selected == ind">{{item}}</label></li>
   </ul>
   <button class="btn default-btn" (click)="getQuestion('prev')" [disabled]="user.count === 0">Prev</button>
   <button class="btn default-btn" (click)="getQuestion('next')" *ngIf="user.count != quizes.length-1">Next</button>

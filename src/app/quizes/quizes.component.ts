@@ -29,7 +29,6 @@ export class QuizesComponent implements OnInit {
     this.http.get('assets/data/mock.data.json').subscribe(
       res => {
         this.quizes = res.json();
-        // this.quizes.map(item => item.selected = "");
         this.getQuestion();
       },
       error => console.log(error)
@@ -60,7 +59,7 @@ export class QuizesComponent implements OnInit {
   private setDefault() {
     this.quizes = [];
     this.user = new User();
-    this.currentQuiz = new Quiz({ "question": "", "options": [], "answer": "", "selected": "" });
+    this.currentQuiz = new Quiz();
   }
 
 }
